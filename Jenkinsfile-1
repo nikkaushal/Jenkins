@@ -8,4 +8,8 @@ pipeline {
         }
 
     }
+    Stage('two')
+        steps{
+            sh 'echo welcome to stage 2'
+        }
 }
