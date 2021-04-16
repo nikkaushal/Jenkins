@@ -6,9 +6,10 @@ pipeline {
                 sh 'echo welcome to stage one'
             }
         }
-        Stage('two')
-        steps{
-            sh 'echo welcome to stage 2'
+        Stage('two') {
+            steps {
+                sh 'echo welcome to stage 2'
+            }
         }
     }
 
