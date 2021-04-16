@@ -11,6 +11,11 @@ pipeline {
                 sh 'echo welcome to stage 2'
             }
         }
+        stage('three') {
+            steps {
+                sh 'echo welcome to stage three'
+            }
+        }
     } //stages
 
 } //pipeline
