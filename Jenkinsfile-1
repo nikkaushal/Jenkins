@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         URL1 = 'google.com'
+        USERPASS = credetial ('NIK')
     }
     stages {
         stage('One'){
@@ -20,6 +21,7 @@ pipeline {
          }
             steps {
                 sh 'echo URL = ${URL1}'
+                sh 'echo USERPASS = ${USERPASS}'
             }
         }
     } //stages
