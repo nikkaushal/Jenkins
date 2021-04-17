@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         URL1 = 'google.com'
-        USERPASS = credetial ('NIK')
+        USERPASS = credetialS('NIK')
     }
     stages {
         stage('One'){
