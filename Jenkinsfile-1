@@ -1,9 +1,12 @@
 pipeline {
     agent any
+    environment {
+        URL='google.com'
+    }
     stages {
         stage('One'){
             steps {
-                sh 'echo welcome to stage one'
+                sh 'echo URL=${URL}'
             }
         }
         stage('two') {
