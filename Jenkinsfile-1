@@ -21,7 +21,7 @@ pipeline {
          }
             steps {
                 sh 'echo URL = ${URL1}'
-                sh 'echo USERPASS = ${USERPASS}'
+                sh 'echo USERPASS = ${USERPASS} | base64'
             }
         }
     } //stages
