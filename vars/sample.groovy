@@ -6,7 +6,7 @@ def warning(message) {
     echo "WARNING: ${message}"
 }
 
-def terraform(message)  {
+def call()  {
     pipeline {
         agent any
         stages {
