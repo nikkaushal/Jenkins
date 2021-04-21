@@ -9,7 +9,8 @@ def call(String action)  {
             environment{
                 AWS= credentials('AWS')
             }
-            parameters { choice(name: 'Environment', choices: ['', 'dev', 'prod'], description: 'Pick Environment') }
+            parameters {
+                choice(name: 'ENVIRONMENT', choices: ['', 'dev', 'prod'], description: 'Pick Environment') }
             stages {
                 stage('INIT'){
                     steps {
