@@ -6,14 +6,14 @@ def call(String action)  {
             tools {
                 terraform 'terraform14'
             }
-            parameters { choice(name: 'Environment', choices: ['', 'DEV', 'PROD'], description: 'Pick Something') }
+            parameters { choice(name: 'Environment', choices: ['', 'DEV', 'PROD'], description: 'Pick Environment') }
             stages {
                 stage('INIT'){
                     steps {
                         sh '''
                         export AWS_ACCESS_KEY_ID=${AWS_USR}
                         export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
-                          'make dev-init'
+                          'make $(ENVIRONMENT)-init'
                         '''
                     }
                 }
@@ -22,7 +22,7 @@ def call(String action)  {
                         sh '''
                         export AWS_ACCESS_KEY_ID=${AWS_USR}
                         export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
-                          'make dev-apply'
+                          'make $(ENVIRONMENT)-apply'
                         '''
                     }
                 }
