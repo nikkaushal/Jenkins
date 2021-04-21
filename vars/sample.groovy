@@ -15,6 +15,7 @@ def terraform() {
                     script {
                         print 'Hello'
 
+                    }
                 }
             }
 
