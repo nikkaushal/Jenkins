@@ -6,6 +6,9 @@ def call(String action)  {
             tools {
                 terraform 'terraform14'
             }
+            environment{
+                AWS= credentials('AWS')
+            }
             parameters { choice(name: 'Environment', choices: ['', 'DEV', 'PROD'], description: 'Pick Environment') }
             stages {
                 stage('INIT'){
