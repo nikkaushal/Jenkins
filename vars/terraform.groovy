@@ -2,6 +2,11 @@ def call(String action)  {
     if (action == "apply") {
         pipeline {
             agent any
+
+            tools {
+                terraform 'terraform14'
+            }
+            parameters { choice(name: 'Environment', choices: ['', 'DEV', 'PROD'], description: 'Pick Something') }
             stages {
                 stage('INIT'){
                     steps {
