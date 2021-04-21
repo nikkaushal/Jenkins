@@ -6,6 +6,16 @@ def warning(message) {
     echo "WARNING: ${message}"
 }
 
-def terraform(message) {
-    echo "Nothing : ${message}"
+def terraform(message)  {
+    pipeline {
+        agent any
+        stages {
+            stage('Shared Library Demo') {
+                steps {
+                    sh 'echo hellow world'
+                }
+            }
+
+        }
+    }
 }
