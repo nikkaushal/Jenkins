@@ -2,7 +2,7 @@
 pipeline {
     agent any
      stages {
-         stage {'Shared Library Demo'}{
+         stage ('Shared Library Demo'){
              steps {
                  script{
                  log.info 'Starting'
