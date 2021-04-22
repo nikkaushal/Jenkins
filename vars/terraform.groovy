@@ -10,23 +10,24 @@ def call(String action)  {
                 AWS= credentials('AWS')
             }
             parameters {
-                choice(name: 'ENVIRONMENT', choices: ['', 'dev', 'prod'], description: 'Pick Environment') }
+                choice(name: 'ENVIRONMENT', choices: ['', 'dev', 'prod'], description: 'Pick Environment')
+            }
             stages {
                 stage('INIT'){
                     steps {
                         sh '''
-                        export AWS_ACCESS_KEY_ID=${AWS_USR}
-                        export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
-                          'make $(ENVIRONMENT)-init'
+                         export AWS_ACCESS_KEY_ID=${AWS_USR}
+                         export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
+                         make $(ENVIRONMENT)-init
                         '''
                     }
                 }
                 stage('APPLY') {
                     steps {
                         sh '''
-                        export AWS_ACCESS_KEY_ID=${AWS_USR}
-                        export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
-                          'make $(ENVIRONMENT)-apply'
+                         export AWS_ACCESS_KEY_ID=${AWS_USR}
+                         export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
+                         make $(ENVIRONMENT)-apply
                         '''
                     }
                 }
