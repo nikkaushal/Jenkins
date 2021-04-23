@@ -36,7 +36,7 @@ pipelineJob('Terraform-Releases/FRONTEND') {
                 }
                 'branches' {
                     'hudson.plugins.git.BranchSpec' {
-                        'name'('*/main')
+                        'name'('*/master')
                     }
                 }
             }
