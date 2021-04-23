@@ -18,6 +18,7 @@ def call(String action)  {
                         sh '''
                          export AWS_ACCESS_KEY_ID=${AWS_USR}
                          export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
+                         export TF_VAR_APP_ARTIFACT_VERSION="*"
                          make ${ENVIRONMENT}-init
                         '''
                     }
@@ -27,6 +28,7 @@ def call(String action)  {
                         sh '''
                          export AWS_ACCESS_KEY_ID=${AWS_USR}
                          export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
+                         export TF_VAR_APP_ARTIFACT_VERSION="*"
                          make ${ENVIRONMENT}-apply
                         '''
                     }
