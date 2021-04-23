@@ -57,7 +57,7 @@ pipelineJob('Terraform-Releases/ALB') {
                 }
                 'branches' {
                     'hudson.plugins.git.BranchSpec' {
-                        'name'('*/master')
+                        'name'('*/main')
                     }
                 }
             }
