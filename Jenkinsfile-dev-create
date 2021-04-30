@@ -3,24 +3,24 @@ pipeline {
     stages {
         stage ('VPC'){
             steps {
-                sh 'sleep 20'
+                build job: 'Terraform-Releases/VPC', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
             }
         }
-        stage ('Frontne') {
+        stage ('Frontend') {
             steps {
-                sh 'sleep 20'
+                build job: 'Terraform-Releases/FRONTEND', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
             }
         }
         stage('ALB & Databases') {
             parallel {
                 stage('ALB') {
                     steps {
-                        sh'sleep 10'
+                        build job: 'Terraform-Releases/ALB', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
                 }
                 stage('Databases') {
                     steps {
-                        sh 'sleep 10'
+                        build job: 'Terraform-Releases/DATABASES', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]  sh 'sleep 10'
                     }
                 }
             }
@@ -31,27 +31,27 @@ pipeline {
             parallel {
                 stage('cart'){
                     steps{
-                        sh 'sleep 10'
+                        build job: 'Terraform-Releases/CART', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
                 }
                 stage('catalogue'){
                     steps{
-                        sh 'sleep 10'
+                        build job: 'Terraform-Releases/CATALOGUE', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
                 }
                 stage('user'){
                     steps{
-                        sh 'sleep 10'
+                        build job: 'Terraform-Releases/USER', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
                 }
                 stage('shipping'){
                     steps{
-                        sh 'sleep 10'
+                        build job: 'Terraform-Releases/SHIPPING', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
                 }
                 stage('payment'){
                     steps{
-                        sh 'sleep 10'
+                        build job: 'Terraform-Releases/PAYMENT', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
                 }
             }
