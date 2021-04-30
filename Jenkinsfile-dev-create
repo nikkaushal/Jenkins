@@ -26,5 +26,35 @@ pipeline {
             }
 
         }
+
+        stage('components'){
+            parallel {
+                stage('cart'){
+                    steps{
+                        sh 'sleep 10'
+                    }
+                }
+                stage('catalogue'){
+                    steps{
+                        sh 'sleep 10'
+                    }
+                }
+                stage('user'){
+                    steps{
+                        sh 'sleep 10'
+                    }
+                }
+                stage('shipping'){
+                    steps{
+                        sh 'sleep 10'
+                    }
+                }
+                stage('payment'){
+                    steps{
+                        sh 'sleep 10'
+                    }
+                }
+            }
+        }
     }
 }
