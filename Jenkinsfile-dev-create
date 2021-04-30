@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage ('VPC'){
+            steps {
+                sh 'sleep 20'
+            }
+        }
+        stage ('Frontne') {
+            steps {
+                sh 'sleep 20'
+            }
+        }
+        stage('ALB & Databases') {
+            parallel {
+                stage('ALB') {
+                    steps {
+                        sh'sleep 10'
+                    }
+                }
+                stage('Databases') {
+                    steps {
+                        sh 'sleep 10'
+                    }
+                }
+            }
+
+        }
+    }
+}
