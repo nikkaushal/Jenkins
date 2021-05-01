@@ -13,7 +13,7 @@ pipeline {
         }
         stage('ALB') {
             //parallel {
-                steps('ALB') {
+                steps {
                     steps {
                         build job: 'Terraform-Releases/ALB', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
