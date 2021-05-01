@@ -15,7 +15,7 @@ pipeline {
 //        stages {
             stage('ALB') {
                 steps {
-                    build job: 'Terraform-Releases/LB', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+                    build job: 'Terraform-Releases/ALB', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                 }
             }
 //        stage('ALB') {
