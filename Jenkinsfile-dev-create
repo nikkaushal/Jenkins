@@ -46,22 +46,22 @@ pipeline {
                             build job: 'Terraform-Releases/CATALOGUE', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                         }
                     }
-                    stage('user') {
-                        steps {
-                            build job: 'Terraform-Releases/USER', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-                        }
-                    }
-                    stage('shipping') {
-                        steps {
-                            build job: 'Terraform-Releases/SHIPPING', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-                        }
-                    }
-                    stage('payment') {
-                        steps {
-                            build job: 'Terraform-Releases/PAYMENT', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-                        }
-                    }
-                }
+//                    stage('user') {
+//                        steps {
+//                            build job: 'Terraform-Releases/USER', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+//                        }
+//                    }
+//                    stage('shipping') {
+//                        steps {
+//                            build job: 'Terraform-Releases/SHIPPING', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+//                        }
+//                    }
+//                    stage('payment') {
+//                        steps {
+//                            build job: 'Terraform-Releases/PAYMENT', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+//                        }
+//                    }
+//                }
             }
         }
     }
