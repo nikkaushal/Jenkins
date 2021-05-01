@@ -11,19 +11,19 @@ pipeline {
                 build job: 'Terraform-Releases/FRONTEND', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
             }
         }
-        stage('ALB & Databases') {
-            parallel {
-                stage('ALB') {
+        stage('ALB') {
+            //parallel {
+                steps('ALB') {
                     steps {
                         build job: 'Terraform-Releases/ALB', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
                 }
-                stage('Databases') {
-                    steps {
-                        build job: 'Terraform-Releases/DATABASES', parameters: [string(name: 'ENVIRONMENT', value: 'dev')] 
-                    }
-                }
-            }
+//                stage('Databases') {
+//                    steps {
+//                        build job: 'Terraform-Releases/DATABASES', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+//                    }
+//                }
+           // }
 
         }
 
