@@ -61,7 +61,7 @@ pipeline {
 //                            build job: 'Terraform-Releases/PAYMENT', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
 //                        }
 //                    }
-//                }
+                }
             }
         }
     }
