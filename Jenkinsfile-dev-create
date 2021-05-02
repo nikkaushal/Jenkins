@@ -36,11 +36,11 @@ pipeline {
 
             stage('components') {
                 parallel {
-                    stage('cart') {
-                        steps {
-                            build job: 'Terraform-Releases/CART', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-                        }
-                    }
+//                    stage('cart') {
+//                        steps {
+//                            build job: 'Terraform-Releases/CART', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+//                        }
+//                    }
                     stage('catalogue') {
                         steps {
                             build job: 'Terraform-Releases/CATALOGUE', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
