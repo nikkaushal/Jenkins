@@ -26,31 +26,31 @@ pipeline {
                         build job: 'Terraform-Releases/DATABASES', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
                     }
                 }
-        stage('cart') {
-            steps {
-                build job: 'Terraform-Releases/cart', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+            stage('cart') {
+                steps {
+                    build job: 'Terraform-Releases/cart', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+                }
             }
-        }
-        stage('catalogue') {
-            steps {
-                build job: 'Terraform-Releases/catalogue', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+            stage('catalogue') {
+                steps {
+                    build job: 'Terraform-Releases/catalogue', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+                }
             }
-        }
-        stage('user') {
-            steps {
-                build job: 'Terraform-Releases/user', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+            stage('user') {
+                steps {
+                    build job: 'Terraform-Releases/user', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+                }
             }
-        }
-        stage('shipping') {
-            steps {
-                build job: 'Terraform-Releases/shipping', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+            stage('shipping') {
+                steps {
+                    build job: 'Terraform-Releases/shipping', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+                }
             }
-        }
-        stage('payment') {
-            steps {
-                build job: 'Terraform-Releases/payment', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+            stage('payment') {
+                steps {
+                    build job: 'Terraform-Releases/payment', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
+                }
             }
-        }
 //        stage('ALB') {
 //            parallel {
 //                steps('ALB') {
